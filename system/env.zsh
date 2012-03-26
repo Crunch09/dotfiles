@@ -1,1 +1,1 @@
-export EDITOR='sublime_text'
+export EDITOR='subl'
