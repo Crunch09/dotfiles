@@ -9,7 +9,7 @@ These are going to be my personalized dotfiles, forked from the awesome [Zach Ho
 
 ## install
 
-- `git clone git://github.com/crunch09/dotfiles ~/.dotfiles`
+- `git clone git://github.com/Crunch09/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `rake install`
 
