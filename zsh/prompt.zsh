@@ -12,7 +12,7 @@ git_dirty() {
   then
     echo ""
   else
-    if [[ $st == "nothing to commit (working directory clean)" ]]
+    if [[ $st =~ ^nothing ]]
     then
       echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
@@ -28,7 +28,7 @@ git_prompt_info () {
 }
 
 unpushed () {
-  /usr/bin/git cherry -v origin/$(git_branch) 2>/dev/null
+  /usr/bin/git cherry -v @{upstream} 2>/dev/null
 }
 
 need_push () {
