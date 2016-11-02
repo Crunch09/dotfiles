@@ -12,7 +12,7 @@ git_dirty() {
   then
     echo ""
   else
-    if [[ $st =~ ^(nothing.+directory clean) ]]
+    if [[ $st =~ ^(nothing.+tree clean) ]]
     then
       echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
