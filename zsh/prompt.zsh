@@ -7,12 +7,11 @@ git_branch() {
 }
 
 git_dirty() {
-  st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
-  if [[ $st == "" ]]
+  if $(! /usr/bin/git status -s &> /dev/null)
   then
     echo ""
   else
-    if [[ $st =~ ^(nothing.+tree clean) ]]
+    if [[ $(/usr/bin/git status --porcelain) == "" ]]
     then
       echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
